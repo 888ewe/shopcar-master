@@ -13,6 +13,7 @@
     z-index: 1001;
     right: 60px;
     bottom: 60px;
+    animation: more 0.5s linear infinite alternate;
 }
 .content{
     width: 900px;
@@ -29,15 +30,34 @@
 .section01 .goods{
    text-align: center;
     margin-top: 230px;
-;
+    animation: more 1.5s linear infinite alternate;
 }
 .section01 .sofa{
     position: absolute;
     top: 150px;
     left: 230px;
+    animation: more 2s linear infinite alternate;
 }
 .section01 .fly{
     position: absolute;
     top: 30px;
     right: -50px;
+    animation: fly01 1s linear infinite alternate;
+    /*infinite 无限次  alternate 逆播放*/
+}
+@keyframes fly01 {
+    from{
+        transform: translateY(-30px);
+    }
+    to{
+        transform: translateY(30px);
+    }
+}
+@keyframes more {
+    from{
+        transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(20px);
+    }
 }
