@@ -61,3 +61,88 @@
         transform: translateY(20px);
     }
 }
+/*第二屏*/
+.section02{
+    background:url("../images/02-bg.png") no-repeat  center bottom;
+}
+.section02 .goods{
+    position: absolute;
+    bottom: 210px;
+    left: 50%;
+    margin-left: -220px;
+    transform-origin: right bottom;
+    transform: scale(0);
+}
+.section02 .sofa{
+    transform: scale(0.5);
+    position: absolute;
+    left: 292px;
+    top: 132px;
+}
+.section02 .input{
+    position: absolute;
+    right: 171px;
+    top:119px;
+    transform: scale(0.7);
+    transform-origin: right top;
+    opacity: 0;
+}
+.section02 .input .search{}
+.section02 .input .key{
+    position: absolute;
+    left: 100px;
+    top: 4px;
+    opacity: 0;
+}
+.section02 .text{
+    text-align: center;
+}
+.section02 .text .text01{}
+.section02 .text .text02{
+    position: absolute;
+    opacity: 0;
+}
+/*第二屏动画*/
+.section02.now .text .text01{
+    position: absolute;
+    opacity: 0;
+}
+.section02.now .text .text02{
+    position: static;
+    opacity: 1;
+    transition: opacity 1s;
+}
+.section02.now .input{
+    /*动画播放完成状态控制  默认属性backwards(回到起点) forwards(保持)*/
+    animation: input02 3s linear forwards;
+}
+.section02.now .input .key{
+    opacity: 1;
+    transition: all 1s linear 1s;
+}
+.section02.now .goods{
+    /*none 清空所有转换属性*/
+    transform: none;
+    transition: all 1s linear 2s;
+}
+/*第二屏动画*/
+@keyframes input02 {
+   0%{
+        transform: translate(2000px,130px);
+    }
+    33.3%{
+        transform: translate(-180px,130px);
+    }
+    67%{
+        transform: translate(-180px,130px);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(0.7);
+    }
+}
+
+.section02 .now .input{
+    /*forwards 保持*/
+    animation:input02 3s linear forwards;
+}
