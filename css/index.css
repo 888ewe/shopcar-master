@@ -78,12 +78,14 @@
     position: absolute;
     left: 292px;
     top: 132px;
+    opacity: 0;
+    z-index: 1001;
 }
 .section02 .input{
     position: absolute;
     right: 171px;
     top:119px;
-    transform: scale(0.7);
+    /*transform: scale(0.7);*/
     transform-origin: right top;
     opacity: 0;
 }
@@ -125,6 +127,10 @@
     transform: none;
     transition: all 1s linear 2s;
 }
+.section02.now .input{
+    /*forwards 保持*/
+    animation:input02 3s linear forwards;
+}
 /*第二屏动画*/
 @keyframes input02 {
    0%{
@@ -142,7 +148,64 @@
     }
 }
 
-.section02 .now .input{
-    /*forwards 保持*/
-    animation:input02 3s linear forwards;
+/*沙发动画    和页面保持同步*/
+.section02.leaved .sofa{
+    animation: sofa02 1s linear;
+}
+@keyframes sofa02 {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 1;
+        transform: translate(-80px,700px);
+    }
+}
+/*第3屏动画*/
+.section03{
+    background: url("../images/03-bg.png") no-repeat center bottom;
+}
+.section03 .sofa{
+    position: absolute;
+    left: 212px;
+    top: 180px;
+    display: none;
+}
+.section03 .change{
+    position: absolute;
+    right: 115px;
+    bottom: 170px;
+}
+.section03 .change img:last-child{
+    position: absolute;
+    opacity: 0;
+}
+.section03 .cart{
+    position: absolute;
+    right: 192px;
+    bottom: 100px;
+}
+.section03 .cart img:last-child{
+    position: absolute;
+    opacity: 0;
+}
+.section03.now .change img:first-child{
+    display: none;
+}
+.section03.now .change img:last-child{
+    position: static;
+    opacity: 1;
+    transition: all 1s linear;
+}
+.section03.now .cart img:first-child{
+    display: none;
+}
+.section03.now .cart img:last-child{
+    position: static;
+    opacity: 1;
+    transition: all 1s linear;
+}
+.section03.now .sofa{
+    display: block;
+    z-index: 1001;
 }

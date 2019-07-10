@@ -9,11 +9,19 @@ $(function () {
             $('.section').eq(index-1).addClass('now');
             // console.log("idnex"+index);
         },
+        //离开某页面
+        onLeave:function(index,nextIndex,direction){
+            if (index==2&&nextIndex==3){
+            //    当页面从二页跳三页
+                $('.section').eq(index-1).addClass('leaved');
+            }
+        },
         afterRender:function () {
             $('.more').on('click',function () {
                 // $.fn 插件方法
                 $.fn.fullpage.moveSectionDown();
             });
-        }
+        },
+        scrollingSpeed: 1000,
     });
 });
