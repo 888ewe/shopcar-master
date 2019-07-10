@@ -209,3 +209,35 @@
     display: block;
     z-index: 1001;
 }
+/*.section03.leaved .sofa{*/
+/*   transform: ;*/
+/*}*/
+/*第4屏动画*/
+.section04{
+    background: url("../images/04-bg.png") no-repeat center bottom;
+}
+.section04 .cloud{
+    position: absolute;
+    left: -400px;
+    top: 10px;
+    animation: cloud04 30s linear infinite alternate;
+}
+@keyframes cloud04 {
+     from{
+     }
+     to{
+         transform: translateX(2000px);
+     }
+ }
+.section04 .text{
+    text-align: center;
+    margin-top: 120px;
+}
+.section04 .text img:last-child{
+    position: absolute;
+    opacity: 0;
+}
+.section04 .cart{
+    text-align: center;
+    margin-top: 50px;
+}
