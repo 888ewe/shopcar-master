@@ -9,5 +9,11 @@ $(function () {
             $('.section').eq(index-1).addClass('now');
             // console.log("idnex"+index);
         },
+        afterRender:function () {
+            $('.more').on('click',function () {
+                // $.fn 插件方法
+                $.fn.fullpage.moveSectionDown();
+            });
+        }
     });
 });
