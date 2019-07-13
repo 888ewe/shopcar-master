@@ -209,9 +209,16 @@
     display: block;
     z-index: 1001;
 }
-/*.section03.leaved .sofa{*/
-/*   transform: ;*/
-/*}*/
+.section03.leaved .sofa{
+  animation: sofa03 1s linear;
+}
+@keyframes sofa03 {
+    from{}
+    to{
+        transform: translate(190px,666px) rotate(45deg);
+    }
+
+}
 /*第4屏动画*/
 .section04{
     background: url("../images/04-bg.png") no-repeat center bottom;
@@ -237,7 +244,51 @@
     position: absolute;
     opacity: 0;
 }
+.section04 .text img:first-child{
+    position: absolute;
+    opacity: 0;
+}
+.section04 .text img:last-child{
+    position: static;
+    opacity: 1;
+    transition: all 1s linear;
+}
 .section04 .cart{
     text-align: center;
     margin-top: 50px;
+    position: relative;
+    z-index: 1002;
+}
+.section04 .sofa{
+    position: absolute;
+    top: 200px;
+    left: 420px;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+.section04 .address{
+    position: absolute;
+    width: 283px;
+    height: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+.section04 .address img:last-child{
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    /*css3的居中 基于本身*/
+    transform: translateX(-50%);
+    z-index: 1;
+    display: none;
+}
+.section04.now .sofa{
+     opacity: 1;
+     transform: translateX(1000px);
+     transition: transform 3s;
+ }
+.section04.now .cart{
+    transition: all 3s;
+    transform: translateX(1000px);
 }

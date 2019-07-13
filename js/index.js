@@ -11,8 +11,10 @@ $(function () {
         },
         //离开某页面
         onLeave:function(index,nextIndex,direction){
-            if (index==2&&nextIndex==3){
+            if (index===2&&nextIndex===3){
             //    当页面从二页跳三页
+                $('.section').eq(index-1).addClass('leaved');
+            }else if (index===3&&nextIndex===4) {
                 $('.section').eq(index-1).addClass('leaved');
             }
         },
@@ -20,6 +22,12 @@ $(function () {
             $('.more').on('click',function () {
                 // $.fn 插件方法
                 $.fn.fullpage.moveSectionDown();
+            });
+            /*当第四屏的购物车动画结束之后执行收货地址的动画*/
+            $('.section04 .cart').on('transitionend',function () {
+                /* :last :first :visible :hidden :checked :selected jquery扩展选择器*/
+                $('.section04 .address').show().find('img:last').fadeIn(1000);
+                $('.section04 .text').addClass('show');
             });
         },
         scrollingSpeed: 1000,
